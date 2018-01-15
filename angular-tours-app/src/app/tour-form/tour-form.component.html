@@ -1,0 +1,22 @@
+<form (ngSubmit)="onTourSubmit()" #f="ngForm">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="name"
+                   type="text"
+                   required
+                   name='name'
+                   [(ngModel)]="tour.name"
+                   class="validate">
+            <label for="name">Tour Name</label>
+        </div>
+        <div class="col s12 ">
+            <button type="submit"
+                    [disabled]="!(f.valid)"
+                    [ngClass]="{'disabled': !(f.valid)}"
+                    class="waves-effect waves-light btn blue right"
+            >
+                Save
+            </button>
+        </div>
+    </div>
+</form>

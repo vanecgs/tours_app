@@ -1,0 +1,40 @@
+<form (ngSubmit)="onWaypointSubmit()" #f="ngForm">
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="name"
+             type="text"
+             required
+             name='name'
+             [(ngModel)]="waypoint.name"
+             class="validate">
+      <label for="name">Waypoint Name</label>
+    </div>
+    <div class="input-field col s12">
+      <input id="lat"
+             type="text"
+             required
+             name='lat'
+             [(ngModel)]="waypoint.lat"
+             class="validate">
+      <label for="lat">Latitude</label>
+    </div>
+      <div class="input-field col s12">
+          <input id="lng"
+                 type="text"
+                 required
+                 name='lat'
+                 [(ngModel)]="waypoint.lng"
+                 class="validate">
+          <label for="lng">Longitude</label>
+      </div>
+    <div class="col s12 ">
+      <button type="submit"
+              [disabled]="!(f.valid)"
+              [ngClass]="{'disabled': !(f.valid)}"
+              class="waves-effect waves-light btn blue right"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</form>
